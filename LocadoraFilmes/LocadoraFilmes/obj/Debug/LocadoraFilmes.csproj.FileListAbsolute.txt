@@ -1,0 +1,12 @@
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\bin\Debug\LocadoraFilmes.exe.config
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\bin\Debug\LocadoraFilmes.exe
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\bin\Debug\LocadoraFilmes.pdb
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.csproj.AssemblyReference.cache
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.Properties.Resources.resources
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.csproj.GenerateResource.cache
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.csproj.CoreCompileInputs.cache
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.exe
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.pdb
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.TelaInicial.resources
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.Cadastro.resources
+C:\Projetos\LocadoraFilmes\LocadoraFilmes\obj\Debug\LocadoraFilmes.Login.resources
