@@ -31,9 +31,39 @@ namespace LocadoraFilmes
 
         private void btnentrar_Click(object sender, EventArgs e)
         {
-            TelaPrincipal telaprincipal = new TelaPrincipal();
-            telaprincipal.Show();
-            Hide();
+            if (campoSenhalogin.Text.Equals("") || campoCpfLogin.Text.Equals(""))
+            {
+                MessageBox.Show("Preencha todos os campos primeiro!");
+            }
+            else {
+                TelaPrincipal telaprincipal = new TelaPrincipal();
+                telaprincipal.Show();
+                Hide();
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVisualizarLogin_Click(object sender, EventArgs e)
+        {
+            Image olho = new Bitmap(Properties.Resources.olho);
+            Image olhoAberto = new Bitmap(Properties.Resources.olho_fechado);
+
+            if (campoSenhalogin.UseSystemPasswordChar) {
+                campoSenhalogin.UseSystemPasswordChar = false;
+                btnVisualizarLogin.BackgroundImage = olhoAberto;
+            } else {
+                campoSenhalogin.UseSystemPasswordChar = true;
+                btnVisualizarLogin.BackgroundImage = olho;
+            }
         }
     }
 }

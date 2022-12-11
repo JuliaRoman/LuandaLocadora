@@ -37,12 +37,12 @@ namespace LocadoraFilmes
             // 
             // btnTelaCadastro
             // 
-            this.btnTelaCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(101)))), ((int)(((byte)(246)))));
-            this.btnTelaCadastro.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTelaCadastro.BackColor = System.Drawing.Color.DarkMagenta;
+            this.btnTelaCadastro.Font = new System.Drawing.Font("Bahnschrift", 30.75F);
             this.btnTelaCadastro.ForeColor = System.Drawing.Color.White;
-            this.btnTelaCadastro.Location = new System.Drawing.Point(365, 164);
+            this.btnTelaCadastro.Location = new System.Drawing.Point(602, 323);
             this.btnTelaCadastro.Name = "btnTelaCadastro";
-            this.btnTelaCadastro.Size = new System.Drawing.Size(125, 45);
+            this.btnTelaCadastro.Size = new System.Drawing.Size(202, 63);
             this.btnTelaCadastro.TabIndex = 0;
             this.btnTelaCadastro.Text = "Cadastro";
             this.btnTelaCadastro.UseVisualStyleBackColor = false;
@@ -50,12 +50,12 @@ namespace LocadoraFilmes
             // 
             // btnTelaLogin
             // 
-            this.btnTelaLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(101)))), ((int)(((byte)(246)))));
-            this.btnTelaLogin.Font = new System.Drawing.Font("Bahnschrift", 15.75F);
+            this.btnTelaLogin.BackColor = System.Drawing.Color.Purple;
+            this.btnTelaLogin.Font = new System.Drawing.Font("Bahnschrift", 30.75F);
             this.btnTelaLogin.ForeColor = System.Drawing.Color.White;
-            this.btnTelaLogin.Location = new System.Drawing.Point(149, 164);
+            this.btnTelaLogin.Location = new System.Drawing.Point(363, 323);
             this.btnTelaLogin.Name = "btnTelaLogin";
-            this.btnTelaLogin.Size = new System.Drawing.Size(125, 45);
+            this.btnTelaLogin.Size = new System.Drawing.Size(155, 63);
             this.btnTelaLogin.TabIndex = 1;
             this.btnTelaLogin.Text = "Login";
             this.btnTelaLogin.UseVisualStyleBackColor = false;
@@ -64,11 +64,12 @@ namespace LocadoraFilmes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 40F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 57);
+            this.label1.Location = new System.Drawing.Point(124, 170);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(541, 40);
+            this.label1.Size = new System.Drawing.Size(917, 70);
             this.label1.TabIndex = 2;
             this.label1.Text = "Bem vindo(a) a Luanda Locadora!";
             // 
@@ -77,8 +78,10 @@ namespace LocadoraFilmes
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ClientSize = new System.Drawing.Size(666, 283);
+            this.BackColor = System.Drawing.Color.Purple;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1129, 593);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTelaLogin);
             this.Controls.Add(this.btnTelaCadastro);
