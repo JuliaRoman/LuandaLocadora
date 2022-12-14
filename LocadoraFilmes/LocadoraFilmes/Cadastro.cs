@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace LocadoraFilmes
 {
     public partial class Cadastro : Form
     {
+        private MySqlConnection conexaobd;
         public Cadastro()
         {
             InitializeComponent();
@@ -41,7 +43,7 @@ namespace LocadoraFilmes
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (txtNomeCadastro.Text.Equals("") || txtcpfCadastro.Text.Equals("") || camposenhacadastro.Text.Equals("") || campodatanasc.Text.Equals("") || camposenhadnvcadastro.Text.Equals(""))
+            if (txtNomeCadastro.Text.Equals("") || txtcpfCadastro.Text.Equals("") || camposenhacadastro.Text.Equals("") || camposenhadnvcadastro.Text.Equals(""))
             {
                 MessageBox.Show("Preencha todos os campos primeiro!");
             }
@@ -49,10 +51,35 @@ namespace LocadoraFilmes
             {
                 if (camposenhacadastro.Text.Equals(camposenhadnvcadastro.Text))
                 {
-                    TelaPrincipal telaprincipal = new TelaPrincipal();
-                    telaprincipal.Show();
-                    Hide();
-                }
+                    try
+                    {
+                        string data_source = "datasource=localhost;username=root;password=;database=locadora";
+
+                        //CRIANDO A CONEXÂO MYSQL
+
+                        conexaobd = new MySqlConnection(data_source);
+
+                        string sql = "INSERT INTO contas_cli (nome, cpf, senha)" + " VALUES('" + txtNomeCadastro.Text + "', '" + txtcpfCadastro.Text + "', '" + camposenhacadastro.Text + "') ";
+
+                        MySqlCommand comando = new MySqlCommand(sql, conexaobd);
+
+                        conexaobd.Open();
+
+                        comando.ExecuteReader();
+                        MessageBox.Show("Conta Cadastrada");
+
+                        TelaPrincipal telaprincipal = new TelaPrincipal();
+                        telaprincipal.Show();
+                        Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally {
+                        conexaobd.Close();
+                    }
+                    }
                 else {
                     MessageBox.Show("Erro em confirmação de senha");
                     camposenhadnvcadastro.Text = "";

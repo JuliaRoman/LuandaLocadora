@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace LocadoraFilmes
 {
     public partial class Login : Form
     {
+        private MySqlConnection conexaobd;
         public Login()
         {
             InitializeComponent();
@@ -36,9 +38,47 @@ namespace LocadoraFilmes
                 MessageBox.Show("Preencha todos os campos primeiro!");
             }
             else {
-                TelaPrincipal telaprincipal = new TelaPrincipal();
-                telaprincipal.Show();
-                Hide();
+                try
+                {
+                    string data_source = "datasource=localhost;username=root;password=;database=locadora";
+
+                    //CRIANDO A CONEXÂO MYSQL
+
+                    conexaobd = new MySqlConnection(data_source);
+
+                    MySqlCommand comando = new MySqlCommand();
+                    comando.CommandText = "SELECT senha FROM contas_cli WHERE cpf=@cpf And senha=@senha";
+                    comando.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = campoCpfLogin.Text;
+                    comando.Parameters.Add("@senha", MySqlDbType.VarChar).Value = campoSenhalogin.Text;
+                    comando.CommandType = CommandType.Text;
+                    comando.Connection = conexaobd;
+
+                    conexaobd.Open();
+
+                    MySqlDataReader reader = comando.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        //usuario logado
+                        MessageBox.Show("Login realizado com sucesso");
+
+                        TelaPrincipal telaprincipal = new TelaPrincipal();
+                        telaprincipal.Show();
+                        Hide();
+                    }
+                    else
+                    {
+                        //todo : Login ou Senha Invalida
+                        MessageBox.Show("Login ou senha inválida!");
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally {
+                    conexaobd.Close();
+                }
             }
         }
 
